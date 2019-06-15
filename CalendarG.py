@@ -1,30 +1,27 @@
-''' 
-Input Any Day Number and Display its equivalent Day Name.
+''' According to the Gregorian calendar, it was Monday on the
+date 01/01/1900. If any year is input through the keyboard
+write a program to find out what is the day on 1st January of
+this year '''
 
-If Day is 1 then Print Monday
-If Day is 2 then Print Tuesday
-If Day is 3 then Print Wednesday
-If Day is 4 then Print Thursday
-If Day is 5 then Print Friday
-If Day is 6 then Print Saturday
-If Day is 7 then Print Sunday
-If other day is specified then print INvalid Day '''
-
-day_num = int(input(" Enter day number "))
-
-if day_num ==1 :
-	print(" Monday ")
-if day_num ==2 :
-	print(" Tuesday ")
-if day_num ==3 :
-	print(" Wednesday ")
-if day_num ==4 :
-	print(" Thursday ")
-if day_num ==5 :
-	print(" Friday ")
-if day_num ==6 :
-	print(" Saturday ")
-if day_num ==7 :
-	print(" Sunday ")
-if day_num <=0 or day_num > 7 :
-	print(" Invalid day number ")
+year = int(input( " Enter an year "))
+year = year-1
+normal_years = year * 365
+leap_yrs = year // 4 + year // 400 - year // 100 
+total_days = normal_years + leap_yrs
+odd_days = total_days%7
+if odd_days==0:
+	print(" On 1st January, Day is/was Monday ")
+if odd_days==1:
+	print(" On 1st January, Day is/was Tuesday ")
+if odd_days==2:
+	print(" On 1st January, Day is/was Wednesday ")
+if odd_days==3:
+	print(" On 1st January, Day is/was Thursday ")
+if odd_days==4:
+	print(" On 1st January, Day is/was Friday ")
+if odd_days==5:
+	print(" On 1st January, Day is/was Saturday ")
+if odd_days==6:
+	print(" On 1st January, Day is/was Sunday ")
+if odd_days<0 or odd_days>=7:
+	print(" Invalid choice ")
